@@ -1,0 +1,293 @@
+/*背景图设置*/
+@charset "utf-8";
+.backgroundimage {
+	background: #FFFFFF;
+	position: fixed;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+
+/*所有css消除原有样式*/
+
+
+/*html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,pre{
+  margin:0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}*/
+
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+img {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch
+}
+
+img {
+	border: none;
+}
+
+img {
+	display: block;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/*设置所有元素包含padding  margin;设置所有元基本大小为28px,设置所有字体*/
+
+* {
+	box-sizing: border-box;
+	font-size: 0.28rem;
+}
+
+body {
+	font-family:'PingFangSC-Regular', sans-serif;
+	font-weight:400;
+}
+
+
+/*解决所有图片比实际高3px问题*/
+
+img {
+	/*margin-bottom: -3px;*/
+}
+
+
+/*flex布局类名*/
+
+.contentcenter {
+	justify-content: center;
+	align-items: center;
+}
+
+.maincenter {
+	justify-content: center;
+}
+
+.cocenter {
+	align-items: center;
+}
+
+.flex {
+	display: flex;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.row {
+	flex-direction: row
+}
+
+.between {
+	justify-content: space-between;
+}
+
+.around {
+	justify-content: space-around;
+}
+
+
+/*flex样式*/
+
+.flex {
+	display: flex;
+}
+
+.flex-between {
+	/*两边对齐*/
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex-align-center {
+	/*垂直居中*/
+	display: flex;
+	align-items: center;
+}
+
+.flex-center {
+	/*水平垂直居中*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-center-around {
+	/*水平垂直居中-平均对齐*/
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.flex-center-between {
+	/*水平垂直居中-两边对齐*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.flex-column {
+	/*竖直方向*/
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-column-center {
+	/*竖直方向水平居中 两端对齐*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.flex-column-around {
+		/*竖直方向水平居中 平均对齐*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.flex-column-align {
+	/*竖直方向水平居中*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+/* 头部样式-封装头部组件使用 */
+
+.header {
+	width: 100%;
+	height: .88rem;
+	line-height: .88rem;
+	padding: 0 .32rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	background: #fff;
+	border-bottom: 1px solid #F1F1F1;
+	/*background: -webkit-linear-gradient(#5A7DA3, #597BA1); !* Safari 5.1 - 6.0 *!
+  background: -o-linear-gradient(#5A7DA3, #597BA1); !* Opera 11.1 - 12.0 *!
+  background: -moz-linear-gradient(#5A7DA3, #597BA1); !* Firefox 3.6 - 15 *!
+  background: linear-gradient(#5A7DA3, #597BA1); !* 标准的语法 *!*/
+	z-index: 999;
+}
+
+.header .header-left {
+	width: .4rem;
+	height: .4rem;
+}
+
+.header .header-right {
+	width: .4rem;
+	height: .4rem;
+}
+
+.header-title {
+	height: .88rem;
+	line-height: .88rem;
+	font-size: .36rem;
+	color: #222222;
+}
+
+/*公用样式-页面内容使用*/
+.public-contain {
+	padding: .5rem .3rem 0;
+}
+.public-backBox {
+	height: .88rem;
+	line-height: .88rem;
+}
+.public-img {
+	width: 0.13rem;
+  height: 0.23rem;
+}
+.overhidden {
+	height: 100%;
+	overflow: hidden;
+}
+
+/*单页面整体样式*/
+.overall-style {
+	height: 100vh;
+	background: #F9F9F9;
+}
+.fa-margin {
+	  margin-left: .1rem;
+}
+/*字体公用样式*/
+.common-register-title {
+	font-family: 'PingFang-SC-Heavy',sans-serif;
+	font-weight:800;
+}
+.common-register-input-plhr {
+	font-family:'PingFangSC-Regular', sans-serif;
+	font-weight:400;
+}
+.common-register-input-write {
+	font-family: 'PingFang-SC-Bold', sans-serif;
+	font-weight:bold;
+}
+
+.common-register-item {
+	font-family:'PingFang-SC-Medium', sans-serif;
+	font-weight:500;
+}
+.commont-licence-plate-num {
+	font-family: 'PingFangSC-Semibold', sans-serifs;
+	font-weight:600;
+}
+.red-color{
+  color:red !important;
+}
+.green-color{
+  color:green !important;
+}
+.padding-left-1{
+  padding-left:0.1rem;
+}
+/*评价messagebox弹出框单页样式*/
+
+
+

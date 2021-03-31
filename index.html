@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, shrink-to-fit=no,user-scalable=0">
+    <title>app_function_togather</title>
+    <script src="./static/js/interfaceUrl.js"></script>
+		<script src="./static/js/publicmethods.js"></script>
+	  <script src="./static/js/validate.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    
+  </body>
+  <script>
+    //  屏幕适配 px = > rem   100px = 1rem
+    (function(doc, win) {
+       var docEl = doc.documentElement;
+       resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+       recalc = function() {
+         var clientWidth = docEl.clientWidth;
+         if(!clientWidth) return;
+         docEl.style.fontSize = 50 * (clientWidth / 375) + 'px';
+       };
+       if(!doc.addEventListener) return;
+       win.addEventListener(resizeEvt, recalc, false);
+       doc.addEventListener('DOMContentLoaded', recalc, false);
+     }(document, window));
+     
+    //解决遮罩层滚动穿透问题，分别在遮罩层弹出后和关闭前调用
+     const ModalHelper = ((bodyCls) => { 
+				let scrollTop;
+				return {
+					afterOpen: function() {
+						scrollTop = document.scrollingElement.scrollTop;
+						document.body.classList.add(bodyCls);
+						document.body.style.top = -scrollTop + 'px';
+					},
+					beforeClose: function() {
+						document.body.classList.remove(bodyCls);
+						document.scrollingElement.scrollTop = scrollTop;
+					}
+				};
+			})('dialog-open');
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+					};
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+ </script>
+</html>
