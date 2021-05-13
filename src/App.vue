@@ -1,29 +1,25 @@
 <template>
   <div id="app">
-     <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
   name: 'App',
-  data(){
-    return {
-
-    }
+  data() {
+    return {}
   },
-  created(){
+  created() {
     // 存储用户信息
-      var obj ={
-        name:'zs',
-        age:'19',
-        address:'江苏邳州'
-      }
-     this.$store.dispatch("userinfo",obj)
-  }
+    var obj = {
+      name: 'luoxiaoyu',
+      age: '18',
+      address: '浙江杭州',
+    }
+    this.$store.dispatch('userinfo', obj)
+  },
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
