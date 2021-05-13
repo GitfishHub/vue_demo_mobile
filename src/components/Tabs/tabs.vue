@@ -19,6 +19,7 @@
         v-if="showSwiper"
       >
         <swiper-slide v-for="item in list" :key="item.id">
+          <!-- <div>{{ item.id }}</div> -->
           <img class="swiper-img" :src="item.imgUrl" />
         </swiper-slide>
 
